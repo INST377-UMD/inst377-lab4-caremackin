@@ -1,0 +1,19 @@
+.section{
+    flex: 0 1 calc(33.333% - 20px);
+    padding: 20px;
+    background-color: #f5c6e7;
+    border: 5px solid #2e9b71;
+    border-radius: 8px;
+}
+
+.bodycontent{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+body{
+    background-color:rgb(204, 217, 197);
+}
