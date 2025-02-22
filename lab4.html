@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="lab4.css">
+<head>
+
+</head>
+<body>
+
+
+<h1>INST 377 - Lab 4</h1>
+    <div class="bodycontent">
+        <div class="section">
+            <form id="nameForm">
+                <div>
+                    <label for="name">Name:</label>
+                    <input class="name" type="text" id="name" name="name" required><br><br>
+                    <button class="btn" type="submit" value="Submit">Alert Me!</button>
+                </div>
+              </form>
+        </div>
+        <div class="section">
+            <button id="colorBtn">Change Color</button>
+        </div>
+        <div class="section">
+            <form id = "charForm">
+                <div>
+                    <label for="text">Text Tester:</label>
+                    <input class="text" type="text" id="text" name="text" required><br><br>
+                    <button class="btn" type="submit" value="Submit">Validate Text</button>
+                </div>
+              </form>
+        </div>
+        <div class="section">
+            <button id = "textbtn">Add Text</button>
+        </div>
+        
+    </div>
+    <script>
+        let green = true;
+
+        document.getElementById("nameForm").addEventListener("submit", function(event) {
+        alert(`Hi ${document.getElementById("name").value}!`);
+        });
+
+        document.getElementById("colorBtn").addEventListener("click", function(event) {
+            if (green === false){
+                document.getElementsByTagName('body')[0].style.backgroundColor = 'rgb(204, 217, 197)'
+                green = true;
+            } else if (green === true){
+                document.getElementsByTagName('body')[0].style.backgroundColor = 'rgb(250,250,210)'
+                green = false;
+            }
+            console.log(currColor);
+           
+        });
+
+        document.getElementById("charForm").addEventListener("submit", function(event) {
+            let text = document.getElementById("text").value
+            var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            let notValid = validation.test(text);
+            if(notValid === true){
+                alert("Text contains special character!")
+            }
+        });
+
+        document.getElementById("textbtn").addEventListener("click", function(event) {
+            console.log(document.getElementsByTagName('h1')[0])
+            document.getElementsByTagName('h1')[0].append(" Add Text!")
+
+        });
+        
+
+
+            </script>
+   
+</body>
